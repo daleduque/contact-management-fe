@@ -1,0 +1,12 @@
+.contact-list-container {
+    max-width: 80%;
+    margin: 100px auto;
+}
+
+.filter mat-form-field{
+    margin-right: 10px;
+}
+
+.filter button{
+    margin-right: 10px;
+}

@@ -1,0 +1,34 @@
+.contact-form-container {
+    max-width: 400px;
+    margin: 100px auto;
+}
+  
+.width100 {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+mat-card {
+    padding: 20px;
+}
+
+mat-card-title{
+    text-align: center;
+    margin: 1rem;
+}
+
+.contact-form-error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contact-form {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.contact-form:hover{
+    opacity: 1;
+}
+  

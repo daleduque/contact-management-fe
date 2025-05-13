@@ -1,0 +1,33 @@
+<div class="contact-list-container">
+    <div class="filter">
+        <mat-form-field>
+            <input matInput placeholder="Search" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select>
+                <mat-option value="name">Name</mat-option>
+                <mat-option value="email">Email</mat-option>
+                <mat-option value="city">City</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select>
+                <mat-option value="asc">Asc</mat-option>
+                <mat-option value="desc">Desc</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="btn-add-contact" (click)="addContactNavigation()">
+            Add Contact
+        </button>
+
+        <button mat-raised-button color="secondary" class="btn-logout">
+            Logout
+        </button>
+    </div>
+</div>
