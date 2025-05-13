@@ -1,12 +1,26 @@
-.contact-list-container {
-    max-width: 80%;
-    margin: 100px auto;
-}
+.main-card {
+    padding: 24px;
+    margin: 20px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 
-.filter mat-form-field{
-    margin-right: 10px;
-}
+  .filters {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 250px;
+    max-width: 300px;
+  }
 
-.filter button{
-    margin-right: 10px;
-}
+  .table-container {
+    flex: 3;
+    min-width: 400px;
+  }

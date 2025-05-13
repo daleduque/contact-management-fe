@@ -1,33 +1,45 @@
-<div class="contact-list-container">
-    <div class="filter">
-        <mat-form-field>
-            <input matInput placeholder="Search" />
+<mat-card class="main-card">
+    <div class="content-wrapper">
+      <div class="filters">
+        <mat-form-field appearance="fill">
+          <input matInput [(ngModel)]="searchInputValue" (keyup)="onKeyUp($event)" placeholder="Search" />
         </mat-form-field>
-        <mat-form-field>
-            <mat-select>
-                <mat-option value="name">Name</mat-option>
-                <mat-option value="email">Email</mat-option>
-                <mat-option value="city">City</mat-option>
-            </mat-select>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="sortBy" (selectionChange)="sortDataBy()" placeholder="Sort By">
+            <mat-option value="name">Name</mat-option>
+            <mat-option value="email">Email</mat-option>
+            <mat-option value="city">City</mat-option>
+          </mat-select>
         </mat-form-field>
-        <mat-form-field>
-            <mat-select>
-                <mat-option value="asc">Asc</mat-option>
-                <mat-option value="desc">Desc</mat-option>
-            </mat-select>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="orderBy" (selectionChange)="sortOrderBy()" placeholder="Order">
+            <mat-option value="asc">Asc</mat-option>
+            <mat-option value="desc">Desc</mat-option>
+          </mat-select>
         </mat-form-field>
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+        <mat-form-field appearance="fill">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="createdAt" (dateChange)="onDateChange($event)" placeholder="Created At">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-
-        <button mat-raised-button color="primary" class="btn-add-contact" (click)="addContactNavigation()">
-            Add Contact
+        <button mat-raised-button color="primary" (click)="navigateToAddContct()">
+          Add Contact
         </button>
-
-        <button mat-raised-button color="secondary" class="btn-logout">
-            Logout
+        <button mat-raised-button color="warn" (click)="logout()">
+          Logout
         </button>
+      </div>
+      <div class="table-container">
+        <app-table
+          [tableDataColumns]="dataColumns"
+          [tableDisplayColumns]="displayColumns"
+          [tableData]="data"
+          [totalData]="totalData"
+          (pageNumber)="pageNumberChange($event)"
+          (pageSize)="pageSizeChange($event)"
+          (deleteContact)="deleteContact($event)"
+          (editContact)="editContact($event)">
+        </app-table>
+      </div>
     </div>
-</div>
+  </mat-card>

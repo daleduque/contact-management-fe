@@ -2,9 +2,7 @@
     <mat-card>
         <mat-card-title>New Contact</mat-card-title>
         <mat-card-content>
-            <form [formGroup]="contactForms">
-
-                <!-- Name Field -->
+            <form [formGroup]="contactForms" (ngSubmit)="submit()">
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>Name</mat-label>
                     <input matInput formControlName="name" placeholder="Enter your name">
@@ -12,8 +10,6 @@
                     <mat-error>Name is required</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- Title Field -->
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>Title</mat-label>
                     <input matInput formControlName="title" placeholder="Enter your title">
@@ -21,8 +17,6 @@
                     <mat-error>Title is required</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- Email Field -->
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" type="email" placeholder="Enter your email">
@@ -34,8 +28,6 @@
                         email</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- Phone Field -->
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>Phone</mat-label>
                     <input matInput formControlName="phone" placeholder="Enter your phone number">
@@ -44,8 +36,6 @@
                         required</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- Address Field -->
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>Address</mat-label>
                     <input matInput formControlName="address" placeholder="Enter your address">
@@ -53,20 +43,20 @@
                     <mat-error>Address is required</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- City Dropdown -->
                 <mat-form-field appearance="fill" class="width100">
                     <mat-label>City</mat-label>
                     <mat-select formControlName="city">
+                        @for(city of cities; track city){
+                        <mat-option [value]="city">{{ city }}</mat-option>
+                        }
                     </mat-select>
                     @if(contactForms.get('city')?.hasError('required')){
                     <mat-error>City is required</mat-error>
                     }
                 </mat-form-field>
-
-                <!-- Submit Button -->
                 <button mat-raised-button color="primary" type="submit" [disabled]="contactForms.invalid"
                     class="width100">
+                    {{isEditted ? 'Update Contact' : 'Add Contact'}}
                 </button>
             </form>
         </mat-card-content>
