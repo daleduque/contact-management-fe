@@ -1,27 +1,39 @@
-# ContactManagementApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+# Contacts Management Application
 
-## Development server
+This is an Contacts Management application. Follow the instructions below to run the app locally.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prerequisites
 
-## Code scaffolding
+Before you start, ensure you have the following installed:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Node.js** (version >= 20.x)
+- **npm** (Node Package Manager)
+- **Angular CLI** (if not installed, you can install it globally using `npm install -g @angular/cli`)
 
-## Build
+## Clone the Repository
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the repository to your local machine:
 
-## Running unit tests
+```bash
+git clone https://github.com/daleduque/contact-management-fe.git
+cd contact-management-fe
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Install Dependencies
 
-## Running end-to-end tests
+Run the following command to install the necessary dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+## Running the Development Server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Once the dependencies are installed, you can start the development server with:
+
+```bash
+ng serve
+```
+
+This will start the server at `http://localhost:4200/`. Open the browser and visit this URL to see the app in action.
