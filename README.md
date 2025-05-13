@@ -7,7 +7,7 @@ This is an Contacts Management application. Follow the instructions below to run
 
 Before you start, ensure you have the following installed:
 
-- **Node.js** (version >= 20.x)
+- **Node.js** (version >= 22.x)
 - **npm** (Node Package Manager)
 - **Angular CLI** (if not installed, you can install it globally using `npm install -g @angular/cli`)
 
